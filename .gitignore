@@ -1,0 +1,12 @@
+### Project ###
+postgres/data
+
+### IDE ###
+/.idea
+/.vscode
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
