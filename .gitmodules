@@ -1,0 +1,3 @@
+[submodule "apollo-server-trial-api"]
+	path = apollo-server-trial-api
+	url = https://github.com/Sei-Yukinari/apollo-server-trial-api
