@@ -5,7 +5,7 @@ services:
       context: ./apollo-server-trial-api
       dockerfile: Dockerfile.dev
     volumes:
-      - ./apollo-server-trial-api/src:/usr/app/src
+      - ./apollo-server-trial-api/src:/app/src
       - ~/.aws:/root/.aws
     environment:
       - NODE_ENV=development
