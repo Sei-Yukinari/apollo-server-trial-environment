@@ -1,5 +1,27 @@
 version: "3.8"
 services:
+  api:
+    build:
+      context: ./apollo-server-trial-api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./apollo-server-trial-api/src:/usr/app/src
+      - ~/.aws:/root/.aws
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "4000:4000"
+    entrypoint:
+      - dockerize
+      - -timeout
+      - 60s
+      - -wait
+      - tcp://postgres:5432
+      - -wait-retry-interval
+      - 5s
+    command: [ "yarn","dev" ]
+    depends_on:
+      - postgres
   postgres:
     build:
       context: .

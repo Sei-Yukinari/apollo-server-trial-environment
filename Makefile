@@ -66,4 +66,4 @@ ifeq (exec,$(firstword $(MAKECMDGOALS)))
   $(eval $(RUN_ARGS):;@:)
 endif
 exec:
-	${COMPOSE_COMMAND} exec $(RUN_ARGS) bash
+	${COMPOSE_COMMAND} exec $(RUN_ARGS) ash
