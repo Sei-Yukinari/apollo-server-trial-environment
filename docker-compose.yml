@@ -5,10 +5,12 @@ services:
       context: ./apollo-server-trial-api
       dockerfile: Dockerfile.dev
     volumes:
-      - ./apollo-server-trial-api/src:/app/src
+      - ./apollo-server-trial-api:/app
       - ~/.aws:/root/.aws
     environment:
       - NODE_ENV=development
+      - APP_PORT=4000
+      - DATABASE_URL=postgresql://root:password@postgres:5432/dev?schema=public
     ports:
       - "4000:4000"
     entrypoint:
